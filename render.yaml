@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: skyshield-air-monitor
+    runtime: docker
+    plan: free
+    region: singapore
+    healthCheckPath: /api/dashboard

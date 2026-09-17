@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "author": "SkyShield",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-devkit-v1", "id": "esp", "top": 0, "left": 0, "attrs": {} },
+    { "type": "wokwi-dht22", "id": "dht", "top": -100, "left": 20, "attrs": { "temperature": "28", "humidity": "60" } },
+    { "type": "wokwi-gas-sensor", "id": "mq2", "top": 150, "left": -200, "attrs": { "ppm": "50" } },
+    { "type": "wokwi-potentiometer", "id": "pm25", "top": 150, "left": 220, "attrs": {} },
+    { "type": "wokwi-potentiometer", "id": "pm10", "top": 220, "left": 220, "attrs": {} },
+    { "type": "wokwi-potentiometer", "id": "oxygen", "top": 290, "left": 220, "attrs": {} },
+    { "type": "wokwi-potentiometer", "id": "co2", "top": 360, "left": 220, "attrs": {} },
+    { "type": "wokwi-potentiometer", "id": "co", "top": 430, "left": 220, "attrs": {} },
+    { "type": "wokwi-potentiometer", "id": "no2", "top": 500, "left": 220, "attrs": {} }
+  ],
+  "connections": [
+    [ "esp:3V3", "dht:VCC", "red", [] ], [ "esp:GND.1", "dht:GND", "black", [] ], [ "esp:GPIO4", "dht:SDA", "green", [] ],
+    [ "esp:VIN", "mq2:VCC", "red", [] ], [ "esp:GND.1", "mq2:GND", "black", [] ], [ "esp:GPIO35", "mq2:AO", "green", [] ],
+    [ "esp:3V3", "pm25:VCC", "red", [] ], [ "esp:GND.1", "pm25:GND", "black", [] ], [ "esp:GPIO34", "pm25:SIG", "green", [] ],
+    [ "esp:3V3", "pm10:VCC", "red", [] ], [ "esp:GND.1", "pm10:GND", "black", [] ], [ "esp:GPIO32", "pm10:SIG", "green", [] ],
+    [ "esp:3V3", "oxygen:VCC", "red", [] ], [ "esp:GND.1", "oxygen:GND", "black", [] ], [ "esp:GPIO33", "oxygen:SIG", "green", [] ],
+    [ "esp:3V3", "co2:VCC", "red", [] ], [ "esp:GND.1", "co2:GND", "black", [] ], [ "esp:GPIO25", "co2:SIG", "green", [] ],
+    [ "esp:3V3", "co:VCC", "red", [] ], [ "esp:GND.1", "co:GND", "black", [] ], [ "esp:GPIO26", "co:SIG", "green", [] ],
+    [ "esp:3V3", "no2:VCC", "red", [] ], [ "esp:GND.1", "no2:GND", "black", [] ], [ "esp:GPIO27", "no2:SIG", "green", [] ]
+  ],
+  "dependencies": {}
+}
